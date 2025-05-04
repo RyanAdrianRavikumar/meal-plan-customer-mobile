@@ -1,5 +1,6 @@
 package com.mealplanmobile.customer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -94,5 +95,11 @@ public class MainActivity extends AppCompatActivity {
         };
 
         queue.add(request);
+    }
+
+    //navigate to registration layout
+    public void navigateToRegister(View view){
+        Intent intent = new Intent(this, RegistrationActivity.class);
+        startActivity(intent);
     }
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/registration"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -51,7 +51,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/email"
+                android:id="@+id/customerEmail"
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/baseline_person_24"
                 android:drawablePadding="8dp"
@@ -91,13 +91,13 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/loginButton"
+                android:id="@+id/registerButton"
                 android:text="Register Customer"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/black"
                 app:cornerRadius = "20dp"
-                android:onClick="onRegisterClick()"/>
+                android:onClick="onRegisterClick"/>
 
             <TextView
                 android:id="@+id/login"
@@ -108,7 +108,9 @@
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="navigateToLogin"
+                />
 
         </LinearLayout>
 
