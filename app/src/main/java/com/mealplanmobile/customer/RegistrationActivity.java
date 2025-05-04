@@ -70,7 +70,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("fullName", name);
+            jsonBody.put("customerName", name);
             jsonBody.put("customerEmail", email);
             jsonBody.put("customerPhone", customerPhone);
             jsonBody.put("customerPassword", pass);
