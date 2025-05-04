@@ -51,7 +51,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/password"
+                android:id="@+id/customerPassword"
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/baseline_lock_24"
                 android:drawablePadding="8dp"
@@ -70,7 +70,8 @@
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/black"
-                app:cornerRadius = "20dp"/>
+                app:cornerRadius = "20dp"
+                android:onClick="onLoginClick()"/>
 
             <TextView
                 android:id="@+id/signupText"
