@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
@@ -44,31 +45,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendPostRequest(){
-        String email = customerEmail.toString().trim();
-        String pass = customerPassword.toString().trim();
+        String email = customerEmail.getText().toString().trim();
+        String pass = customerPassword.getText().toString().trim();
 
         if(email.isEmpty() || pass.isEmpty()){
             Log.e("ERROR", "Email or Password is empty");
             return;
         }
 
-        String url = "http://localhost:8080/customers/login";
+        String url = "http://192.168.1.15:8080/customers/login";
 
         JSONObject jsonBody = new JSONObject();
         try {
-            jsonBody.put("email", email);
-            jsonBody.put("password", pass);
+            jsonBody.put("customerEmail", email);
+            jsonBody.put("customerPassword", pass);
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
         RequestQueue queue = Volley.newRequestQueue(this);
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, jsonBody,
-                new com.android.volley.Response.Listener<JSONObject>() {
+        StringRequest request = new StringRequest(Request.Method.POST, url,
+                new com.android.volley.Response.Listener<String>() {
                     @Override
-                    public void onResponse(JSONObject response) {
-                        Log.d("RESPONSE", response.toString());
+                    public void onResponse(String response) {
+                        Log.d("RESPONSE", response); // Will print: Customer
+                        // You can now handle "Customer", "Admin", etc.
+                        if (response.equalsIgnoreCase("Customer")) {
+                            // Navigate to customer dashboard, etc.
+                        }
                     }
                 },
                 new com.android.volley.Response.ErrorListener() {
@@ -76,7 +81,17 @@ public class MainActivity extends AppCompatActivity {
                     public void onErrorResponse(com.android.volley.VolleyError error) {
                         Log.e("ERROR", error.toString());
                     }
-                });
+                }) {
+            @Override
+            public byte[] getBody() {
+                return jsonBody.toString().getBytes();
+            }
+
+            @Override
+            public String getBodyContentType() {
+                return "application/json";
+            }
+        };
 
         queue.add(request);
     }
