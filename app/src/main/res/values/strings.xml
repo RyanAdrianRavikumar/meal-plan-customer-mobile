@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">customer</string>
+    <string name="underlined_text"><u>Not registered yet? Sign up now!</u></string>
+</resources>
