@@ -29,20 +29,20 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Registration"
-                android:id="@+id/loginText"
-                android:textSize="36sp"
+                android:text="Delivery Address"
+                android:id="@+id/AddressEntryText"
+                android:textSize="30sp"
                 android:textAlignment="center"
                 android:textStyle="bold"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/fullName"
+                android:id="@+id/addressLine"
                 android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/baseline_person_24"
+                android:drawableLeft="@drawable/baseline_house_24"
                 android:drawablePadding="8dp"
-                android:hint="Full Name"
+                android:hint="Address Line"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
@@ -51,11 +51,11 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/customerEmail"
+                android:id="@+id/city"
                 android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/baseline_email_24"
+                android:drawableLeft="@drawable/baseline_location_city_24"
                 android:drawablePadding="8dp"
-                android:hint="Email"
+                android:hint="City"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
@@ -64,11 +64,11 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/phone"
+                android:id="@+id/state"
                 android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/baseline_phone_24"
+                android:drawableLeft="@drawable/baseline_account_balance_24"
                 android:drawablePadding="8dp"
-                android:hint="Phone"
+                android:hint="State/Province"
                 android:padding="8dp"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
@@ -77,40 +77,43 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/customerPassword"
+                android:id="@+id/postalCode"
                 android:background="@drawable/custom_edittext"
-                android:drawableLeft="@drawable/baseline_lock_24"
+                android:drawableLeft="@drawable/baseline_local_post_office_24"
                 android:drawablePadding="8dp"
-                android:hint="Password"
+                android:hint="Postal Code"
                 android:padding="8dp"
-                android:inputType="textPassword"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/cardview_dark_background"
                 android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/underline_text_country"
+                android:id="@+id/countryText"
+                android:textSize="20sp"
+                android:textAlignment="textStart"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                />
+
+            <Spinner
+                android:id="@+id/country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:id="@+id/registerButton"
-                android:text="Register Customer"
+                android:id="@+id/addressSaveButton"
+                android:text="Save Address"
                 android:textSize="18sp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/black"
                 app:cornerRadius = "20dp"
-                android:onClick="onRegisterClick"/>
-
-            <TextView
-                android:id="@+id/login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="@string/underlined_text_registration"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:onClick="navigateToLogin"
-                />
+                android:onClick="onAddressClick"/>
 
         </LinearLayout>
 

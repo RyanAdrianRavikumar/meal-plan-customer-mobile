@@ -2,4 +2,9 @@
     <string name="app_name">customer</string>
     <string name="underlined_text"><u>Not registered yet? Sign up now!</u></string>
     <string name="underlined_text_registration"><u>Already a customer? Login instead!</u></string>
+    <string name="underline_text_country">Select Country:</string>
+    <string name="underline_text_isPrimary">Is Address Primary:</string>
+    <string-array name="country_array">
+        <item>Sri Lanka</item>
+    </string-array>
 </resources>
