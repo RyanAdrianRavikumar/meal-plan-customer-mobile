@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +27,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText customerEmail;
     private EditText phone;
     private EditText customerPassword;
+
 
 
     @Override

@@ -28,6 +28,7 @@ public class AddressActivity extends AppCompatActivity {
     private EditText city;
     private EditText state;
     private EditText postalCode;
+    private Spinner countrySpinner;
 
 
     @Override
@@ -41,15 +42,7 @@ public class AddressActivity extends AppCompatActivity {
             return insets;
         });
 
-        Spinner spinner = findViewById(R.id.country);
-        String[] countries = {"Sri Lanka", "India", "USA"};
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(
-                this, android.R.layout.simple_spinner_item, countries
-        );
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        spinner.setAdapter(arrayAdapter);
-
+        countrySpinner = findViewById(R.id.country);
         addressLine = findViewById(R.id.addressLine);
         city = findViewById(R.id.city);
         state = findViewById(R.id.state);
@@ -93,6 +86,7 @@ public class AddressActivity extends AppCompatActivity {
             String custCity = city.getText().toString().trim();
             String custState = state.getText().toString().trim();
             String custPostalCode = postalCode.getText().toString().trim();
+            String custCountry = countrySpinner.getSelectedItem().toString().trim();
 
             //validations
             if(custAddLine.isEmpty()){
@@ -124,6 +118,7 @@ public class AddressActivity extends AppCompatActivity {
                 jsonBody.put("city", custCity);
                 jsonBody.put("state", custState);
                 jsonBody.put("postalCode", custPostalCode);
+                jsonBody.put("country", custCountry);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

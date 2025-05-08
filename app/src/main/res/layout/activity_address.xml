@@ -102,7 +102,8 @@
                 android:id="@+id/country"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="20dp"
+                android:entries="@array/country_array"/>
 
             <Button
                 android:layout_width="match_parent"
