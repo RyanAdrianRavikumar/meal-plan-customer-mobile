@@ -87,9 +87,11 @@ public class RegistrationActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Log.d("RESPONSE", response); // Will print: Customer
-                        // You can now handle "Customer", "Admin", etc.
                         if (response.equalsIgnoreCase("Customer")) {
-                            // Navigate to customer dashboard, etc.
+                            Intent intent = new Intent(RegistrationActivity.this, AddressActivity.class);
+                            intent.putExtra("email", email);
+                            startActivity(intent);
+                            finish();
                         }
                     }
                 },
