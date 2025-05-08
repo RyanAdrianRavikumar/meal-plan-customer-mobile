@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        String url = "http://192.168.1.15:8080/customers/login";
+        String url = "http://192.168.1.13:8080/customers/login";
 
         JSONObject jsonBody = new JSONObject();
         try {

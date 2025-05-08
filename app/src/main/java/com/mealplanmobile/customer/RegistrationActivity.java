@@ -68,7 +68,7 @@ public class RegistrationActivity extends AppCompatActivity {
             return;
         }
 
-        String url = "http://192.168.1.15:8080/customers/register";
+        String url = "http://192.168.1.13:8080/customers/register";
 
         JSONObject jsonBody = new JSONObject();
         try {
@@ -87,7 +87,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Log.d("RESPONSE", response); // Will print: Customer
-                        if (response.equalsIgnoreCase("Customer")) {
+                        if (response.equalsIgnoreCase("Customer registered successfully.")) {
                             Intent intent = new Intent(RegistrationActivity.this, AddressActivity.class);
                             intent.putExtra("email", email);
                             startActivity(intent);
